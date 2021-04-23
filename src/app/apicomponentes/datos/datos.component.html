@@ -1,0 +1,39 @@
+<div class="card">
+    <div class="card-header">
+        <h3 #tituloencabezado></h3>
+    </div>
+  <div class="card-body" >
+    <div class="row justify-content-center">
+    <img #img class="border  rounded">
+ </div>
+  </div>
+ 
+  
+  <div class="card-text m-5 tablestyle">
+    <div><table class="table table-sm" #tablehidden [hidden]="valorhidden" > 
+      <thead>
+        <tr>
+         <th scope="col">Nombre</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Especificaciones</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Nombre:"><p #nombre></p></td>
+          <td data-label="Precio:"><p #precio></p></td>
+          <td data-label="Especificacion:"><p #especificacion></p></td>
+         
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+
+</div>
+<div *ngIf="PresentarVehiculo; then callfunction"></div>
+<ng-template #callfunction>
+  {{cargarInfo()}}
+</ng-template>

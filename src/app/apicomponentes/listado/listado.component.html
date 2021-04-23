@@ -1,0 +1,30 @@
+<div class="row">
+
+    <div class="col-md-12 col-sm-3">
+        <div class="card">
+            <div class="card-header"><h3>Datos</h3></div>
+            <div class="card-body">
+              
+            <table class="table pd-5">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Codigo</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Mas Informacion</th>
+                </tr>
+                </thead>
+                <tbody >
+                
+                    <tr *ngFor="let variable of vehiculo; let i= index">
+                        <td scope="row">{{i+1}}</td>
+                        <td>{{variable.subtitle}}</td>
+                        <td>{{variable.price}}</td> 
+                        <td><button type="button" class="btn btn-primary btn-lg active" (click)="MostrarDatos(variable.subtitle)">Ver</button></td>
+                     </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+ </div>

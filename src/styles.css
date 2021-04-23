@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+
+    background-color: rgb(252, 253, 253);
+}
+.tablestyle thead{
+
+    display: none;
+}
+.tablestyle tbody tr td{
+
+    width: 95%;
+    display: block;
+}
+.tablestyle td{
+    position: relative;
+    text-align: right;
+    padding-left: 50%;
+    
+
+}
+.tablestyle tbody tr td:before{
+    content: attr(data-label);
+    position: absolute;
+    text-align: left;
+    width: 30%;
+    left: 0;
+    color: blue;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,58 @@
+<div class="card mt-5">
+  <div class="card-header">
+    <h3>Disfruta el contenido de SangYong</h3>
+  </div> 
+  <div class="mt-5 p-5"  (submit)="submit">  
+
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label for="inputnombre">Nombre</label>
+        <input type="text" class="form-control" id="nombre" [(ngModel)]="user.nombre"  placeholder="Nombre" ngModel required>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputEmail">Email</label>
+        <input type="email" class="form-control" id="email"  [(ngModel)]="user.email" placeholder="Email"  required>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label for="inputPassword">Password</label>
+        <input type="password" class="form-control" id="inputPassword" [(ngModel)]="user.password" placeholder="Password" ngModel required>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPasswordconfirm">confirme Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputdireccion">direccion</label>
+      <input type="text" class="form-control" id="direccion"   [(ngModel)]="user.direccion" placeholder="direccion" ngModel required>
+    </div>
+    <div class="form-group">
+      <label for="inputAddress2">Fecha de Nacimiento</label>
+      <input type="date" class="form-control" id="inputAddress2" [(ngModel)]="user.fecha_nacimiento" ngModel required>
+    </div>
+    <div class="form-row">
+
+      <div class="form-group col-md-4">
+        <label for="inputState">Departamento</label>
+        <select id="departamento" class="form-control"  [(ngModel)]="depSelect" (ngModelChange)="CambioDepartamento($event)">
+          <option value='' selected>Seleccione Uno</option>
+          <option *ngFor="let variable of departamento" [value]="variable.nombre">{{variable.nombre}}</option>
+        </select>
+      </div>
+      
+      <div class="form-group col-md-4">
+        <label for="inputState">Ciudad</label>
+        <select id="ciudad" class="form-control" [(ngModel)]="user.ciudad" ngModel required>
+          <option value=''selected>Seleccione Uno</option>
+          <option *ngFor="let variable of ciudad" [value]="variable.nombre">{{variable.nombre}}</option>
+        </select>
+      </div>
+     
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="submit()">Registro</button>
+   
+  </div>
+</div>
